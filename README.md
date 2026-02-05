@@ -1,0 +1,2 @@
+# LivreMenteapp
+Um aplicativo terapêutico focado em combater a autossabotagem, fortalecer os pilares biológicos e promover a autorresponsabilidade através da TCC e neurociência.
