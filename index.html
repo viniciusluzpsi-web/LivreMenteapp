@@ -28,7 +28,7 @@
         transition: background-color 0.5s ease, color 0.5s ease;
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
-        overscroll-behavior-y: contain; /* Previne o scroll elástico no mobile */
+        overscroll-behavior-y: contain;
         height: 100dvh;
       }
       
@@ -56,14 +56,22 @@
 
       @keyframes float-xp {
         0% { transform: translateY(0) scale(0.8); opacity: 0; }
-        20% { transform: translateY(-10px) scale(1.1); opacity: 1; }
-        100% { transform: translateY(-50px) scale(1); opacity: 0; }
+        20% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+        100% { transform: translateY(-60px) scale(1); opacity: 0; }
       }
       .animate-xp {
         animation: float-xp 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
       }
 
-      /* Estilo para inputs no iOS para não dar zoom automático */
+      @keyframes pulse-gold {
+        0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.4); }
+        70% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+      }
+      .animate-level-up {
+        animation: pulse-gold 2s infinite;
+      }
+
       input, select, textarea {
         font-size: 16px !important;
       }
@@ -84,14 +92,6 @@
 </head>
   <body>
     <div id="root"></div>
-    <script>
-      // Service Worker Dummy para PWA
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {});
-        });
-      }
-    </script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
